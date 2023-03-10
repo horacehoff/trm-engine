@@ -12,18 +12,16 @@ pub fn begin_play(pixel_buffer: &Vec<Pixel>) {
     let mut x = 0;
     loop {
         out_buffer = all_pixels_off(&out_buffer);
-        draw_text(&mut out_buffer, 36, 6, "TRM-ENGINE", "white");
-        draw_text(&mut out_buffer, 26, 10, "by Just a mango", "blue");
-        // let result = draw_text(&mut out_buffer, 36, x, "TRM ENGINE", "blue");
+        draw_text(&mut out_buffer, 36, x, "TRM-ENGINE", "white");
 
-        // i += 1;
-        // if i > 100 {
-        //     i = 1;
-        //     x += 1;
-        // }
-        // if x > 46 {
-        //     x = 0;
-        // }
+        i += 1;
+        if i > 100 {
+            i = 1;
+            x += 1;
+        }
+        if x > 46 {
+            x = 0;
+        }
 
 
 
