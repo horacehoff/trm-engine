@@ -27,6 +27,8 @@ jobs:
         # A file, directory or wildcard pattern that describes what to upload
         path: target/release/trm-engine
     - name: Test
-      run: ls
+      run: |
+        cd target/release
+        ls
     - name: Run tests
       run: cargo test --verbose
