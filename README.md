@@ -1,5 +1,6 @@
 # TRM ENGINE
-A WIP very-lightweight™ game engine which runs in the terminal
+A WIP very-lightweight™ game engine which runs in the terminal\
+**Currently only works "somewhat ok" on macOS**
 
 ## About
 - TRM is entirely optimized for **speed**, and not size
