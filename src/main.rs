@@ -1,4 +1,4 @@
-use std::io::stdout;
+use std::io::{stdout, Write};
 use crossterm::{cursor::MoveTo, queue, terminal::SetSize};
 
 use crate::{rendering::render, logic::begin_play};
@@ -55,8 +55,6 @@ fn logic() {
             pixel_buffer.push(pixel);
         }
     }
-    print!("{}[2J", 27 as char);
-    crossterm::terminal::Clear(crossterm::terminal::ClearType::Purge);
     // move cursor to top left
     queue!(stdout(), MoveTo(0, 0), SetSize(150, 50)).unwrap();
     render(&pixel_buffer);
@@ -66,4 +64,5 @@ fn logic() {
 fn main() {
     clear_terminal();
     logic();
+    stdout().lock().write_fmt(format_args!("\x1B[3J")).unwrap();
 }

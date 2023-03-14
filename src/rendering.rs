@@ -1,4 +1,4 @@
-use std::{io::{stdout, Write}, sync::{Mutex, RwLock}};
+use std::{io::{stdout, Write}, sync::Mutex};
 use crate::{Pixel, clear_terminal, bresenham};
 
 
@@ -65,6 +65,9 @@ fn update_previous_buffer(buffer: Vec<Pixel>) -> u8 {
 
 
 pub fn render(buffer: &Vec<Pixel>) {
+    stdout().lock().write_fmt(format_args!("\x1B[3J")).unwrap();
+
+
     let temp_buffer = buffer.clone();
     if update_previous_buffer(temp_buffer) == 1 {
         return;

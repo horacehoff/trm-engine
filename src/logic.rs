@@ -1,4 +1,4 @@
-use crate::{Pixel, all_pixels_off, text::draw_text, rendering::render};
+use crate::{Pixel, all_pixels_off, text::draw_text, rendering::{render, draw_line}};
 
 
 pub fn begin_play(pixel_buffer: &Vec<Pixel>) {
@@ -10,9 +10,12 @@ pub fn begin_play(pixel_buffer: &Vec<Pixel>) {
     out_buffer = all_pixels_off(&out_buffer);
     let mut i = 1;
     let mut x = 0;
+    draw_line(&mut out_buffer, 0, 0, 149, 0, "white");
     loop {
         out_buffer = all_pixels_off(&out_buffer);
+        draw_line(&mut out_buffer, 34, 0, 34, 50, "white");
         draw_text(&mut out_buffer, 36, x, "TRM-ENGINE", "white");
+        draw_line(&mut out_buffer, 101, 0, 101, 50, "white");
 
         i += 1;
         if i > 100 {
