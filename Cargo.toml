@@ -17,8 +17,5 @@ debug = false
 rpath = false
 incremental = false
 
-
 [profile.release.package."*"]
 opt-level = 3
-codegen-units = 1
-debug = false
