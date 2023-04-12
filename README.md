@@ -26,7 +26,7 @@
 
 ## About The Project
 
-![Screen Shot](screenshot.png#screenshot)
+![Screen Shot](screenshot-rounded.png)
 <style>
 img[src$="#screenshot"] {
   border-radius: 10px
