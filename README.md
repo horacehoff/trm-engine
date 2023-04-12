@@ -5,13 +5,13 @@
     A WIP lightweight and fast game engine which runs in the terminal
     <br/>
     <br/>
-    <a href="https://github.com/Just_a_Mango/trm-engine/issues">Report Bug</a>
+    <a href="https://github.com/just-a-mango/trm-engine/issues">Report Bug</a>
     .
-    <a href="https://github.com/Just_a_Mango/trm-engine/issues">Request Feature</a>
+    <a href="https://github.com/just-a-mango/trm-engine/issues">Request Feature</a>
   </p>
 </p>
 
-![Downloads](https://img.shields.io/github/downloads/just-a-mango/trm-engine/total) ![Issues](https://img.shields.io/github/issues/just-a-mango/trm-engine) 
+![Downloads](https://img.shields.io/github/downloads/just-a-mango/trm-engine/total) ![Issues](https://img.shields.io/github/issues/just-a-mango/trm-engine)
 
 ## Table Of Contents
 
@@ -44,10 +44,10 @@ trm-engine provides a simple and flexible platform for creating games in the ter
 
 ## Built With
 
-* Rust: trm-engine is implemented using the Rust programming language, known for its focus on safety, performance, and concurrency, making it well-suited for developing high-quality and efficient applications.
-* crossterm: trm-engine utilizes the crossterm library, a cross-platform terminal manipulation library for Rust, which provides an easy and convenient way to interact with the terminal, including terminal size control, cursor manipulation, and event handling.
-* fastrand (optional)
-* Various custom modules: trm-engine includes custom modules for rendering, utility functions, text manipulation, object management, and shape generation, providing a modular and organized structure for the engine's implementation.
+- Rust: trm-engine is implemented using the Rust programming language, known for its focus on safety, performance, and concurrency, making it well-suited for developing high-quality and efficient applications.
+- crossterm: trm-engine utilizes the crossterm library, a cross-platform terminal manipulation library for Rust, which provides an easy and convenient way to interact with the terminal, including terminal size control, cursor manipulation, and event handling.
+- fastrand (optional)
+- Various custom modules: trm-engine includes custom modules for rendering, utility functions, text manipulation, object management, and shape generation, providing a modular and organized structure for the engine's implementation.
 
 ## Getting Started
 
@@ -55,9 +55,9 @@ To get a local copy of trm-engine up and running and start creating games/contri
 
 ### Prerequisites
 
-* Git
-* Rust
-* Cargo
+- Git
+- Rust
+- Cargo
 
 ### Installation
 
