@@ -27,11 +27,6 @@
 ## About The Project
 
 ![Screen Shot](screenshot-rounded.png)
-<style>
-img[src$="#screenshot"] {
-  border-radius: 10px
-}
-</style>
 
 trm-engine is a game engine designed to run in the terminal, providing a simple and lightweight platform for developing terminal-based games.
 
