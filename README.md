@@ -15,16 +15,23 @@
 
 ## Table Of Contents
 
-* [About the Project](#about-the-project)
-* [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Contributing](#contributing)
+- [Table Of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Contributing](#contributing)
+  - [Creating A Pull Request](#creating-a-pull-request)
 
 ## About The Project
 
-![Screen Shot](images/screenshot.png)
+![Screen Shot](screenshot.png#screenshot)
+<style>
+img[src$="#screenshot"] {
+  border-radius: 10px
+}
+</style>
 
 trm-engine is a game engine designed to run in the terminal, providing a simple and lightweight platform for developing terminal-based games.
 
