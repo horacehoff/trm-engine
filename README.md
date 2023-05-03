@@ -11,8 +11,6 @@
   </p>
 </p>
 
-![Downloads](https://img.shields.io/github/downloads/just-a-mango/trm-engine/total) ![Issues](https://img.shields.io/github/issues/just-a-mango/trm-engine)
-
 ## Table Of Contents
 
 - [Table Of Contents](#table-of-contents)
