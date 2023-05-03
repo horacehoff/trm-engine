@@ -31,7 +31,7 @@ trm-engine is a game engine designed to run in the terminal, providing a simple 
 Key Features:
 
 - Object Management: The engine includes an object management system, allowing for easy creation, manipulation, and movement of game objects within the terminal window.
-- User Interaction: The engine captures user input events, such as key presses, allowing for player interaction and game logic implementation.
+- Size/Performance: The engine offers good performance with a very small bundled size, making it accessible to a wide variety of people and platforms.
 
 trm-engine provides a simple and flexible platform for creating games in the terminal, making it ideal for hobbyist game developers or those looking to learn game development concepts in a lightweight and accessible manner.
 
