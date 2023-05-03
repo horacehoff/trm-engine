@@ -37,10 +37,9 @@ trm-engine provides a simple and flexible platform for creating games in the ter
 
 ## Built With
 
-- Rust: trm-engine is implemented using the Rust programming language, known for its focus on safety, performance, and concurrency, making it well-suited for developing high-quality and efficient applications.
-- crossterm: trm-engine utilizes the crossterm library, a cross-platform terminal manipulation library for Rust, which provides an easy and convenient way to interact with the terminal, including terminal size control, cursor manipulation, and event handling.
+- Rust 
+- crossterm
 - fastrand (optional)
-- Various custom modules: trm-engine includes custom modules for rendering, utility functions, text manipulation, object management, and shape generation, providing a modular and organized structure for the engine's implementation.
 
 ## Getting Started
 
