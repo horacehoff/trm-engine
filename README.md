@@ -11,8 +11,6 @@
   </p>
 </p>
 
-![Downloads](https://img.shields.io/github/downloads/just-a-mango/trm-engine/total) ![Issues](https://img.shields.io/github/issues/just-a-mango/trm-engine)
-
 ## Table Of Contents
 
 - [Table Of Contents](#table-of-contents)
@@ -33,16 +31,15 @@ trm-engine is a game engine designed to run in the terminal, providing a simple 
 Key Features:
 
 - Object Management: The engine includes an object management system, allowing for easy creation, manipulation, and movement of game objects within the terminal window.
-- User Interaction: The engine captures user input events, such as key presses, allowing for player interaction and game logic implementation.
+- Size/Performance: The engine offers good performance with a very small bundled size, making it accessible to a wide variety of people and platforms.
 
 trm-engine provides a simple and flexible platform for creating games in the terminal, making it ideal for hobbyist game developers or those looking to learn game development concepts in a lightweight and accessible manner.
 
 ## Built With
 
-- Rust: trm-engine is implemented using the Rust programming language, known for its focus on safety, performance, and concurrency, making it well-suited for developing high-quality and efficient applications.
-- crossterm: trm-engine utilizes the crossterm library, a cross-platform terminal manipulation library for Rust, which provides an easy and convenient way to interact with the terminal, including terminal size control, cursor manipulation, and event handling.
+- Rust 
+- crossterm
 - fastrand (optional)
-- Various custom modules: trm-engine includes custom modules for rendering, utility functions, text manipulation, object management, and shape generation, providing a modular and organized structure for the engine's implementation.
 
 ## Getting Started
 
