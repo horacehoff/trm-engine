@@ -74,6 +74,23 @@ impl Object {
     pub fn add_pixels(&mut self, pixels: Vec<Pixel>) {
         self.pixels.extend(pixels);
     }
+    /// The `offset` function updates the x and y coordinates of each pixel in a collection by adding
+    /// the specified offsets, and then calls the `draw` function.
+    /// 
+    /// Arguments:
+    /// 
+    /// * `x`: The `x` parameter is an `i32` which represents the amount of horizontal offset to apply
+    /// to each pixel.
+    /// * `y`: The `y` parameter in the `offset` function is an `i32` type, which stands for a 32-bit
+    /// signed integer. It represents the amount by which the `y` coordinate of each pixel in the
+    /// `self.pixels` collection should be offset.
+    pub fn offset(&mut self, x: i32, y: i32) {
+        for pixel in &mut self.pixels {
+            pixel.x = (pixel.x as i32 + x) as u16;
+            pixel.y = (pixel.y as i32 + y) as u16;
+        }
+        self.draw();
+    }
     /// Erases each pixel of this object from the terminal and drops this object from memory. \
     /// 
     /// Arguments:

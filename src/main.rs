@@ -72,17 +72,19 @@ fn main() {
 
 
 
-    let mut obj = Object::new(big_text(0, 25, "trm-engine", Color::White));
+    let mut obj = Object::new(big_text(0, 35, "trm-engine", Color::White));
     obj.draw();
 
-    let mut i = 0;
+    let mut terrain = Object::new(generate_terrain(25, 150));
+    terrain.offset(0, -20);
     loop {
-        i += 1;
         if (obj.pixels[0].x as i32) > 50 {
             obj.move_object(-50, 0)
         }
         // move object
         obj.move_object(1, 0);
+        terrain.draw();
+
         // wait one tenth of a second
         std::thread::sleep(std::time::Duration::from_millis(100));
         
