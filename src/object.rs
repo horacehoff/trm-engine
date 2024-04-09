@@ -1,5 +1,4 @@
-use crate::rendering::{Pixel, erase_pixel, draw_to_terminal};
-
+use crate::rendering::{draw_to_terminal, erase_pixel, Pixel};
 
 /// An object is a collection of pixels that make up a shape, it can be moved, deleted and drawn to the terminal.\
 /// It can also be used to represent a single pixel.
@@ -101,5 +100,14 @@ impl Object {
             erase_pixel(pixel.x, pixel.y);
         }
         drop(self)
+    }
+    /// Remove duplicate pixels of this object
+    ///
+    /// Arguments:
+    ///
+    /// * `self`: A reference to the `Object` to delete.
+    pub fn optimize(&mut self) {
+        self.pixels.sort();
+        self.pixels.dedup();
     }
 }

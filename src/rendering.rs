@@ -1,8 +1,8 @@
 use std::io::{stdout, Write};
 
-use crossterm::{style::{Color, Attribute, SetAttribute, SetForegroundColor, ResetColor}, queue, cursor::MoveTo};
+use crossterm::{cursor::MoveTo, queue, style::{Attribute, Color, ResetColor, SetAttribute, SetForegroundColor}};
 
-use crate::{util::GLOBAL_PIXEL_DATA, access_pixel_data};
+use crate::{access_pixel_data, util::GLOBAL_PIXEL_DATA};
 
 /// A `Pixel` is a struct with three fields: `x`, `y`, and `color`.
 /// 
@@ -15,7 +15,7 @@ use crate::{util::GLOBAL_PIXEL_DATA, access_pixel_data};
 /// * `x`: The x coordinate of the pixel.
 /// * `y`: The y coordinate of the pixel.
 /// * `color`: The color of the pixel.
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, Ord, PartialEq, Eq, PartialOrd)]
 pub struct Pixel {
     pub x: u16,
     pub y: u16,

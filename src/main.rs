@@ -1,24 +1,28 @@
 use std::io::stdout;
-use crossterm::{queue, style::{Color, Print}, cursor::{Hide, Show}, event::{read, Event, KeyEvent, KeyModifiers, KeyCode}, execute, terminal::{ClearType, Clear, disable_raw_mode}};
+
+use crossterm::{cursor::Hide, queue, style::Color};
+
 use object::Object;
-use rendering::{Pixel, draw_text_to_terminal, erase_pixel_area};
-use shapes::{square, rectangle};
-use text::{big_text, draw_big_text};
+use rendering::Pixel;
+use text::big_text;
 use util::new_frame;
+
+use crate::shapes::triangle;
 
 mod rendering;
 mod util;
 mod text;
 mod object;
 mod shapes;
+mod input;
 
 
-
+/// Demo function to show what can be done with this engine
 /// Generates a vector of pixels that represent a 2D terrain
-/// 
+///
 /// Arguments:
-/// 
-/// * `base_height`: the height of the terrain at the left side of the screen
+///
+/// * `base_height`: the height of the terrain on the left side of the screen
 /// * `width`: the width of the terrain
 /// 
 /// Returns:
@@ -29,7 +33,7 @@ fn generate_terrain(base_height: i32, width: u16) -> Vec<Pixel> {
     let mut previous_height: i32 = 0;
     let mut height: i32 = 0;
 
-    let rng = fastrand::Rng::new();
+    let mut rng = fastrand::Rng::new();
 
     for i in 0..width+1 {
         if i == 0 {
@@ -42,7 +46,7 @@ fn generate_terrain(base_height: i32, width: u16) -> Vec<Pixel> {
         } else if height == 49{
             height = previous_height-1
         } else {
-            // makes the terrain 50% more likely to be "plateauy"
+            // makes the terrain 50% more likely to be "plateau-y"
             // if rand::thread_rng().gen_range(0..2) == 1 {
             //     height = previous_height
             // } else {
@@ -62,7 +66,7 @@ fn generate_terrain(base_height: i32, width: u16) -> Vec<Pixel> {
 
 fn init() {
     queue!(stdout(), crossterm::terminal::SetSize(150, 300), Hide).unwrap();
-    // enable raw mode
+    // enable raw mode, only do this if you plan on having the user interact with the terminal screen
     // crossterm::terminal::enable_raw_mode().unwrap();
     new_frame();
 }
@@ -70,25 +74,15 @@ fn init() {
 fn main() {
     init();
 
+    let obj = Object::new(big_text(0, 35, "trm-engine", Color::White));
+    let terrain = Object::new(generate_terrain(25, 150));
 
+    let line = Object::new(triangle(0, 20, 75, 0, 150, 15, Color::Blue));
+    game_loop!({
 
-    let mut obj = Object::new(big_text(0, 35, "trm-engine", Color::White));
-    obj.draw();
-
-    let mut terrain = Object::new(generate_terrain(25, 150));
-    terrain.offset(0, -20);
-    loop {
-        if (obj.pixels[0].x as i32) > 50 {
-            obj.move_object(-50, 0)
-        }
-        // move object
-        obj.move_object(1, 0);
+        obj.draw();
         terrain.draw();
+        line.draw()
 
-        // wait one tenth of a second
-        std::thread::sleep(std::time::Duration::from_millis(100));
-        
-
-    }
-    // disable_raw_mode().unwrap();
+    });
 }
