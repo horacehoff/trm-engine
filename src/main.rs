@@ -8,6 +8,7 @@ use text::big_text;
 use util::new_frame;
 
 use crate::shapes::triangle;
+use crate::util::random_color;
 
 mod rendering;
 mod util;
@@ -74,15 +75,30 @@ fn init() {
 fn main() {
     init();
 
-    let obj = Object::new(big_text(0, 35, "trm-engine", Color::White));
-    let terrain = Object::new(generate_terrain(25, 150));
+    let mut obj = Object::new(big_text(0, 35, "trm-engine", Color::White));
+    let mut terrain = Object::new(generate_terrain(25, 150));
 
-    let line = Object::new(triangle(0, 20, 75, 0, 150, 15, Color::Blue));
+    let mut line = Object::new(triangle(0, 20, 75, 0, 150, 15, Color::Blue));
     game_loop!({
 
+        if (obj.pixels[0].y < 10) {
+            obj.move_object(0, 30)
+        } else {
+            obj.move_object(0, -1);
+        }
         obj.draw();
+        if (terrain.pixels[0].y > 29) {
+            terrain.move_object(0, -25);
+            terrain.change_color(random_color());
+        } else {
+            terrain.move_object(0, 1)
+        }
         terrain.draw();
-        line.draw()
-
+        if (line.pixels[0].y > 45) {
+            line.move_object(0, -20)
+        } else {
+                    line.move_object(0, 1);
+        }
+        line.draw();
     });
 }

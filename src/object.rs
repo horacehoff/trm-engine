@@ -1,3 +1,5 @@
+use crossterm::style::Color;
+
 use crate::rendering::{draw_to_terminal, erase_pixel, Pixel};
 
 /// An object is a collection of pixels that make up a shape, it can be moved, deleted and drawn to the terminal.\
@@ -105,9 +107,20 @@ impl Object {
     ///
     /// Arguments:
     ///
-    /// * `self`: A reference to the `Object` to delete.
+    /// * `self`: A reference to the `Object` to optimize
     pub fn optimize(&mut self) {
         self.pixels.sort();
         self.pixels.dedup();
+    }
+    /// Change the color of all the pixels in this object
+    ///
+    /// Arguments:
+    ///
+    /// * `self`: A reference to the `Object`
+    /// * 'color': The new color of the 'Object'
+    pub fn change_color(&mut self, color: Color) {
+        for pixel in &mut self.pixels {
+            pixel.color = color;
+        }
     }
 }

@@ -1,6 +1,7 @@
 use std::{io::stdout, sync::Mutex};
 
 use crossterm::queue;
+use crossterm::style::Color;
 
 use crate::rendering::Pixel;
 
@@ -38,13 +39,32 @@ pub fn erase_terminal() {
     GLOBAL_PIXEL_DATA.lock().unwrap().clear();
 }
 
-/// Starts the main rendering/logic loop, at 5 frames per second
+/// Starts the main rendering/logic loop, at 20 frames per second
 #[macro_export]
 macro_rules! game_loop {
     ($a:expr) => {
         loop {
             $a;
-            std::thread::sleep(std::time::Duration::from_millis(200));
+            std::thread::sleep(std::time::Duration::from_millis(50));
         }
     };
+}
+
+/// Generates a random color
+pub fn random_color() -> Color {
+    let colors = vec![Color::Black, Color::Blue, Color::Cyan, Color::DarkBlue, Color::DarkCyan, Color::DarkGreen, Color::DarkGrey, Color::DarkMagenta, Color::DarkRed, Color::DarkYellow, Color::Green, Color::Grey, Color::Magenta, Color::Red, Color::White, Color::Yellow];
+    let index = fastrand::usize(..colors.len());
+    colors[index]
+}
+
+/// Generates a random RGB color
+pub fn random_rgb_color() -> Color {
+    let r = fastrand::i16(0..255);
+    let g = fastrand::i16(0..255);
+    let b = fastrand::i16(0..255);
+    Color::Rgb {
+        r: r as u8,
+        g: g as u8,
+        b: b as u8,
+    }
 }
