@@ -39,6 +39,7 @@ trm-engine provides a simple and flexible platform for creating games in the ter
 
 - Rust 
 - crossterm
+- fastrand (used only for the terrain generation demo)
 
 ## Getting Started
 
