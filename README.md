@@ -56,7 +56,7 @@ To get a local copy of trm-engine up and running and start creating games/contri
 1. Clone the repo
 
 ```sh
-git clone https://github.com/just-a-mango/trm-engine
+git clone https://github.com/horacehoff/trm-engine
 ```
 
 2. Run the project and start creating 🎉
