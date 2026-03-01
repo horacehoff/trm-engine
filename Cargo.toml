@@ -17,6 +17,7 @@ panic = 'abort'
 debug = false
 rpath = false
 incremental = false
+strip = true
 
 [profile.release.package."*"]
 opt-level = 3
