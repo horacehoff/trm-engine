@@ -111,6 +111,20 @@ impl Object {
     pub fn optimize(&mut self) {
         self.pixels.sort();
         self.pixels.dedup();
+        let pixels = self.pixels.clone();
+        for pixel in pixels.as_slice() {
+            for pixelb in pixels.as_slice() {
+                if pixel.x == pixelb.x && pixel.y == pixelb.y {
+                    let indexa = self.pixels.iter().position(|&r| r == *pixel).unwrap();
+                    let indexb = self.pixels.iter().position(|&r| r == *pixelb).unwrap();
+                    if indexa > indexb  {
+                        self.pixels.remove(indexb);
+                    } else {
+                        self.pixels.remove(indexa);
+                    }
+                }
+            }
+        }
     }
     /// Change the color of all the pixels in this object
     ///
@@ -122,5 +136,9 @@ impl Object {
         for pixel in &mut self.pixels {
             pixel.color = color;
         }
+    }
+    pub fn merge(&mut self, mut obj: Object) {
+        self.pixels.append(&mut obj.pixels);
+        obj.delete();
     }
 }

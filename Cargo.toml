@@ -21,3 +21,6 @@ strip = true
 
 [profile.release.package."*"]
 opt-level = 3
+strip=true
+debug = false
+codegen-units = 1

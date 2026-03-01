@@ -113,3 +113,14 @@ pub fn triangle(x1: i32, y1: i32, x2: i32, y2: i32, x3: i32, y3: i32, color: Col
     pixels.append(&mut draw_line(x2, y2, x3, y3, color));
     pixels
 }
+
+pub fn circle(x: i32, y: i32) -> Vec<Pixel> {
+    let radius: i32 = 10;
+    let mut pixels: Vec<Pixel> = Vec::new();
+    pixels.push(Pixel{x:x as u16, y:y as u16, color:Color::White});
+    pixels.push(Pixel{x:x as u16 - radius as u16, y:y as u16 , color:Color::White});
+    pixels.push(Pixel{x:x as u16 + radius as u16, y:y as u16 , color:Color::White});
+    pixels.push(Pixel{x:x as u16, y:y as u16 + (radius as f32/1.7) as u16 , color:Color::White});
+    pixels.push(Pixel{x:x as u16, y:y as u16 - (radius as f32/1.7) as u16 , color:Color::White});
+    pixels
+}
